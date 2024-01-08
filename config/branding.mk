@@ -2,7 +2,7 @@
 CUSTOM_BUILD_TYPE ?= COMMUNITY
 
 # HorizonDroid Props
-HORIZON_BASE_VERSION = Venus
+HORIZON_BASE_VERSION = Cosmic
 
 # Time Related
 CUSTOM_DATE_YEAR := $(shell date -u +%Y)

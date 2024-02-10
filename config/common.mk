@@ -96,6 +96,15 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
+# InnerTune
+TARGET_BUILD_INNERTUNE ?= false
+ifeq ($(TARGET_BUILD_INNERTUNE),true)
+PRODUCT_PACKAGES += \
+    InnerTune
+endif
+
+
+
 # GameSpace
 PRODUCT_PACKAGES += \
     GameSpace

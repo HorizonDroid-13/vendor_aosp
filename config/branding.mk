@@ -2,7 +2,7 @@
 CUSTOM_BUILD_TYPE ?= COMMUNITY
 
 # HorizonDroid Props
-HORIZON_BASE_VERSION = Titania
+HORIZON_BASE_VERSION = Eclipse
 
 # Time Related
 CUSTOM_DATE_YEAR := $(shell date -u +%Y)

@@ -20,3 +20,14 @@ HORIZON_BUILD_VERSION = 13.0
 # Custom Versioning
 CUSTOM_VERSION := HorizonDroid-$(HORIZON_BASE_VERSION)-$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
 CUSTOM_VERSION_PROP := thirteen
+
+# Signing
+ifneq (eng,$(TARGET_BUILD_VARIANT))
+ifneq (,$(wildcard vendor/aosp/signing/keys/releasekey.pk8))
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/aosp/signing/keys/releasekey
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.oem_unlock_supported=1
+endif
+ifneq (,$(wildcard vendor/aosp/signing/keys/otakey.x509.pem))
+PRODUCT_OTA_PUBLIC_KEYS := vendor/aosp/signing/keys/otakey.x509.pem
+endif
+endif
